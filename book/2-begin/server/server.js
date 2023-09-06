@@ -21,18 +21,12 @@ const options = {
 };
 mongoose.connect(MONGO_URL, options);
 
-// mongoose
-//   .connect(MONGO_URL, options)
-//   .then(() => console.log('Connected')) // eslint-disable-line no-console
-//   .catch((err) => console.log('Caught', err.stack)); // eslint-disable-line no-console
-
 const port = process.env.PORT || 8000;
 const ROOT_URL = `http://localhost:${port}`;
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-// Nextjs's server prepared
 app.prepare().then(() => {
     const server = express();
 
@@ -56,11 +50,6 @@ app.prepare().then(() => {
     };
 
     server.use(session(sess));
-
-    // server.get('/', (req, res) => {
-    //   const user = { email: 'team@builderbook.org' };
-    //   app.render(req, res, '/', { user });
-    // });
 
     // this is testing code, remove later
     server.get('/', async (req, res) => {

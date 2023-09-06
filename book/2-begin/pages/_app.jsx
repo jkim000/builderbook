@@ -13,14 +13,12 @@ import Header from '../components/Header';
 
 const propTypes = {
     Component: PropTypes.elementType.isRequired,
-  pageProps: PropTypes.object.isRequired, // eslint-disable-line
+    pageProps: PropTypes.object.isRequired,
 };
 
 class MyApp extends App {
     render() {
         const { Component, pageProps } = this.props;
-
-        // console.log(pageProps);
 
         return (
             <CacheProvider
