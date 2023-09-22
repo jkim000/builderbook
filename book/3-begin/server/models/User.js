@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-import _ from 'lodash';
+const _ = require('lodash');
 const generateSlug = require('../utils/slugify');
 
 const { Schema } = mongoose;

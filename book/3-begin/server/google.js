@@ -1,9 +1,6 @@
-import passport from 'passport';
-import { OAuth2Strategy as Strategy } from 'passport-google-oauth';
-import User from './models/User';
-
-import dotenv from 'dotenv';
-dotenv.config();
+const passport = require('passport');
+const Strategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('./models/User');
 
 const setupGoogle = ({ ROOT_URL, server }) => {
     // 1. define `verify` method: get profile and googleToken from Google
@@ -90,4 +87,4 @@ const setupGoogle = ({ ROOT_URL, server }) => {
     });
 };
 
-export default setupGoogle;
+module.exports = setupGoogle;
