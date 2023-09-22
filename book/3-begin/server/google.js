@@ -38,7 +38,7 @@ const setupGoogle = ({ ROOT_URL, server }) => {
             {
                 clientID: process.env.GOOGLE_CLIENT_ID,
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-                callbackURL: `${ROOT_URL}/auth/google/callback`,
+                callbackURL: `${ROOT_URL}/oauth2callback`,
             },
             verify,
         ),
